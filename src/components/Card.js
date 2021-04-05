@@ -3,7 +3,7 @@ import React from 'react';
 function Card({card, clickHandler, cardIndex, selectedCard}) {
 
     return (
-        <article className={`card${cardIndex === selectedCard ? ' selected-card' : ''}`}  onClick={()=> clickHandler(cardIndex)}>
+        <article className={`card${cardIndex === selectedCard ? ' selected-card' : ''}`} onFocus={()=> clickHandler(cardIndex)}  onClick={()=> clickHandler(cardIndex)} tabIndex={0}>
             <img className="thumb-img" alt="" src={require(`../images/${card.thumbSrc}`)}></img>
             {card.workouts !== undefined &&
                 <button className="workouts-tab"  onClick={()=> clickHandler(cardIndex)}>
