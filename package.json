@@ -2,6 +2,7 @@
   "name": "fed-challenge-starter",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://www.ianblynch.com/ifit",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",

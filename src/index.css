@@ -1,13 +1,162 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: 'OpenSans-Bold';
+  src: url(./fonts/OpenSans-Bold.ttf)
+}
+
+@font-face {
+  font-family: 'OpenSans-SemiBold';
+  src: url(./fonts/OpenSans-SemiBold.ttf)
+}
+
+.App {
+  width: 100%;
+  font-family: OpenSans-Bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  height: 300px;
+  width: 300px;
+  margin: 1rem;
+  border-radius: .5rem;
+  box-shadow: 0px 2px 5px 0px #d3d3d3;
+  cursor: pointer;
+}
+
+.selected-card {
+  box-shadow: 0px 7px 11px 5px #d3d3d3;
+  animation: shadow-in .25s;
+}
+
+@keyframes shadow-in {
+  0% {  
+    box-shadow: 0px 2px 5px 0px #d3d3d3;
+  }
+  100% {
+    box-shadow: 0px 7px 11px 5px #d3d3d3;
+  }
+}
+
+.thumb-img {
+  height: 57%;
+  width: 100%;
+  border-radius: .5rem .5rem 0rem 0rem;
+}
+
+.card-info {
+  padding: .5rem .75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-info-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-info-middle {
+  margin-top: .5rem;
+  display: flex;
+  justify-content:left;
+  font-size: .7rem;
+}
+
+.card-title {
+  height: 100%;
+  width: 80%;
+  display: block;
+  margin: 0;
+  font-size: 1.1rem;
+  margin-block-end: 0px;
+  margin-block-start: 0px;
+}
+
+.trainer-img {
+  height: 2rem;
+  width: 2rem;
+}
+
+.timer-icon {
+  display: inline-block;
+  height: .75rem;
+  padding-right: .25rem;
+}
+
+.track-icon {
+  display: inline-block;
+  height: .75rem;
+  padding-right: .25rem;
+}
+
+.time-span {
+  padding-right: .5rem;
+}
+
+.details-link {
+  margin: .5rem 0 0 0;
+  color: rgb(0,105,210);
+  font-family: OpenSans-Bold;
+  font-size: 1rem;
+  border: none;
+  background-color: rgba(0,0,0,0);
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.workouts-tab {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(0,0,0, .5);
+  height: 57%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.workouts-number {
+  color: white;
+  font-family: OpenSans-Bold;
+  font-size: 1.6rem;
+}
+
+.workouts-span {
+  font-family: OpenSans-SemiBold;
+  padding: 1rem 0;
+  font-size: .7rem;
+  color: white;
+}
+
+.series-icon {
+  height: 1rem;
+}
+
+@media screen and (max-width: 432px) { /* 432px is the width of the thumb images*/
+  .card {
+    height: 100%;
+    width: 100%;
+  }
 }

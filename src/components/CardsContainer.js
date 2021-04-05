@@ -1,18 +1,5 @@
-import React from 'react';
-import '../App.css';
-
-
-// {
-//     trainerSrc: '',
-//     thumbSrc: '',
-//     workouts: [],
-//     title: '',
-//     durationMinutes: 30,
-//     durationSeconds: 53,
-//     details: true,
-// }
-
-
+import React, {useState} from 'react';
+import Card from './Card'
 
 
 const cards = [
@@ -23,7 +10,10 @@ const cards = [
         durationMinutes: 30,
         durationSeconds: 53,
         distanceMeters: 6248,
-        details: true
+        details: true,
+        viewCardDetails: () => {
+            alert('view card details')
+        }
     },
     {
         trainerSrc: 'performance-series-trainer.jpg',
@@ -72,12 +62,17 @@ const cards = [
         workouts: [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
         title: 'Shred & Burn Series'
     }
-]
+];
 
 function CardsContainer() {
+    const [selectedCard, setSelectedCard] = useState(undefined)
     return (
         <section className="cards-container">
-            cardscontainer
+            {cards.map((card, cardIndex) => {
+                return (
+                    <Card card={card} key={`card-${cardIndex}`} clickHandler={setSelectedCard} cardIndex={cardIndex} selectedCard={selectedCard}/>
+                )
+            })}
         </section>
     )
 }
